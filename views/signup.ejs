@@ -1,0 +1,74 @@
+	<title>RecommendMe</title>
+<link rel="stylesheet" href="./css/styles.css">
+<link rel="stylesheet" href="./css/loginStyles.css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+<div class="login-main-container">
+
+	  <div id="texttop"></div>
+
+    <div class="login-head-path">
+      <div class="logo">
+        <span></span>
+      </div>
+    </div>
+
+    <div class="bottom-container">
+      <div style="font-size: 22px;" class="login-hi-sign">Hello. Sign in.</div>
+
+      <div class="login-wrap-form">
+        <div class="login-fieldset">
+          <div class="login-box">
+            <label for="inpEmail" class="login-screen-out"></label>
+            <input type="email" id="enpEmail" name="inpEmail" class="inp_comm" placeholder="Your name">
+          </div>
+          <div class="login-box">
+            <label for="inpEmail" class="login-screen-out"></label>
+            <input type="email" id="enpEmail" name="inpEmail" class="inp_comm" placeholder="Email address">
+          </div>
+          <div class="login-box">
+            <label for="inpEmail" class="login-screen-out"></label>
+            <input type="email" id="enpEmail" name="inpEmail" class="inp_comm" placeholder="Password">
+          </div>
+          <div class="login-wrap-sign">
+            <button type="summit" class="login-btn-sign">Sign up</buton>
+          </div>
+          <div class="login-noti">
+            <p class="login-desc-noti">Already have an account? <a class="login-link-noti" href="login" &nbsp>Sign in</a></p>
+          </div>
+          <div class="social-media-icons-container">
+            <a href="/auth/facebook">
+      				<img id="loginBtnImg" src="../img/fbLoginBtn.png" alt="Sign-In with Facebook">
+      			</a>
+      			<a href="/auth/twitter">
+      				<img id="loginBtnImg" src="../img/twLoginBtn.png" alt="Sign-In with Twitter">
+      			</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+	<script>
+	var bgImageArray = ["bg_login1.jpg", "bg_login2.jpg", "bg_login3.jpg"],
+	base = "https://s3.us-east-2.amazonaws.com/dat-tran-recommendme/",
+	secs = 4;
+	bgImageArray.forEach(function(img){
+		new Image().src = base + img;
+		// caches images, avoiding white flash between background replacements
+	});
+
+	function backgroundSequence() {
+	window.clearTimeout();
+	var k = 0;
+	for (i = 0; i < bgImageArray.length; i++) {
+		setTimeout(function(){
+			document.documentElement.style.background = "url(" + base + bgImageArray[k] + ") no-repeat center center fixed";
+			document.documentElement.style.backgroundSize ="cover";
+		if ((k + 1) === bgImageArray.length) { setTimeout(function() { backgroundSequence() }, (secs * 1000))} else { k++; }
+		}, (secs * 1000) * i)
+	}
+	}
+	backgroundSequence();
+	</script>

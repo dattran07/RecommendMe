@@ -1,0 +1,174 @@
+.login-main-container {
+  height: 100vh;
+}
+
+/*.login-bg-wrap {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}*/
+
+html {
+  margin: 0;
+  background-size: cover;
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/full-lonely.jpg") no-repeat center center fixed;
+  background-blend-mode: darken;
+  // blend mode optional at this stage; will be used more in the next demo.
+  transition: 3s;
+  transition-timing-function: ease-in-out;
+}
+
+.login-head-path {
+  position: absolute;
+  top: 40px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.login-head-path .logo {
+  float: left;
+  width: 255px;
+}
+
+.login-head-path .logo span {
+  width: 185px;
+  height: 115px;
+  display: block;
+  text-align: center;
+  text-indent: -9999px;
+  background: transparent url("../img/logo.png") center center no-repeat;
+  margin-left: 36px;
+}
+
+.login-hi-sign {
+  position: absolute;
+  top: 150px;
+  width: 100%;
+  padding-top: 14px;
+  font-weight: normal;
+  font-size: 15px;
+  color: #fff;
+  text-align: center;
+  font-family: Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
+}
+
+.login-wrap-form {
+  position: absolute;
+  left: 0;
+  bottom: 30px;
+  width: 100%;
+}
+
+.login-fieldset {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+::-webkit-input-placeholder {
+  color: white;
+}
+
+::-moz-placeholder {
+  color: white;
+}
+
+:-ms-input-placeholder {
+  color: white;
+}
+
+:-moz-placeholder {
+  color: white;
+}
+
+.login-screen-out {
+  overflow: hidden;
+  position: absolute;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  text-indent: -9999px;
+}
+
+.login-box {
+  width: 100%;
+  border-bottom: 1px solid #fff;
+}
+
+.inp_comm {
+  margin-top: 11px;
+  display: block;
+  width: 100%;
+  padding-left: 4px;
+  height: 30px;
+  border: 0 none !important;
+  font-size: 20px;
+  background: transparent;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.login-wrap-sign {
+  position: relative;
+  width: 500px;
+  height: 45px;
+  margin-top: 27px;
+  text-align: center;
+  border: 0 none;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  margin-left: 45px;
+}
+
+.login-btn-sign {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  font-size: 21px;
+  line-height: 45px;
+  color: #fff;
+  text-shadow: 0px 1px 1px rgba(236, 47, 0, 0.3);
+  background: #f34318;
+  border-radius: 30px 30px 30px 30px;
+  font-weight: bold;
+}
+
+.login-noti {
+  padding: 13px 0 13px;
+  font-size: 14px;
+  text-align: center;
+  color: #fff;
+  font-family: Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
+  font-size: 21px;
+}
+
+.login-link-noti {
+  margin: 0 0 0 4px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.login-noti a:hover {
+  border-bottom: 3px solid rgb(189, 212, 54);
+}
+
+.login-desc-noti {
+  font-size: 21px;
+}
+
+.social-media-icons-container {
+  display: flex;
+  justify-content: center;
+}
+
+.social-media-icons-container a img {
+  width: auto;
+  height: 50px;
+}

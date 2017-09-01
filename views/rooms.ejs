@@ -1,0 +1,85 @@
+	<title>RecommendMe</title>
+
+	<link rel="stylesheet" href="/css/roomsStyles.css">
+	<link rel="stylesheet" href="/css/styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<script src="/js/jquery-2.1.4.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script>
+	'use strict';
+	$(() => {
+		let socket = io('<%= host %>' + '/roomslist', {
+			transports: ['websocket']
+		});
+		let newRoomInput = $("input[name='roomName']");
+
+		let renderChatRooms = chatrooms => {
+			let roomsListDiv = $('#roomsListUL');
+			let listStr = '';
+			for(let cat of chatrooms) {
+				listStr += `<a href="/chat/${cat.roomID}"><li>${cat.room}</li></a>`;
+			}
+			roomsListDiv.html('').append(listStr);
+		}
+
+		// Get a list of chatrooms
+		socket.emit('getChatrooms');
+
+		// Event listener for chatRoomsList
+		socket.on('chatRoomsList', chatrooms => {
+			renderChatRooms(JSON.parse(chatrooms));
+		});
+
+		$('#createBtn').on('click', () => {
+			if(newRoomInput.val() !== '') {
+				socket.emit('createNewRoom', newRoomInput.val());
+				newRoomInput.val('');
+			}
+		});
+	});
+	</script>
+
+	<!--nav-bar-->
+	<div class="group1">
+	  <div class="header-wrap">
+	    <div class="header">
+	      <div class="nav-wrapper">
+	        <div class="logo">
+	          <span></span>
+	        </div>
+	        <div class="nav">
+	          <ul>
+							<li> <a href="home">Home</a></li>
+	            <li> <a href="rooms">Chatroom</a></li>
+	            <li> <a href="about">About</a></li>
+	            <li> <a href="contact">Contact</a></li>
+	          </ul>
+	        </div>
+	      </div>
+	      <p class="logout-button-container">
+	        <a href="login"><input class="logout-button" type="submit" value="Logout"></a>
+	      </p>
+	    </div>
+	  </div>
+	</div>
+
+	<div class="container">
+		  <div class="container-position">
+		<div class="titlePanel">
+			<h1>myCHAT | Select or Create a Chatroom</h1>
+		</div>
+		<div class="controls">
+			<div class="userPicHolder"><img src="<%= user.profilePic %>" alt="<%= user.fullName %>"></div>
+			<p class="userName"><%= user.fullName %></p>
+		</div>
+		<div class="controls">
+			<input type="text" name="roomName" placeholder="Create a new Chatroom">
+			<a href="#" id="createBtn">Create</a>
+		</div>
+		<div class="roomsListDiv">
+			<ul class="roomsList" id="roomsListUL">
+
+			</ul>
+		</div>
+	</div>
+	</div>
