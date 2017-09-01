@@ -12,29 +12,6 @@ ul {
   justify-content: space-around;
 }
 
-#texttop {
-  animation-name: texttop;
-  animation-timing-function: ease-in-out;
-}
-
-@keyframes .login-main-container {
-  0% {
-    opacity: 1;
-  }
-  25% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  85% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 .rubybar {
   height: 42px;
   width: 100%;

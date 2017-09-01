@@ -2,22 +2,12 @@
   height: 100vh;
 }
 
-/*.login-bg-wrap {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-}*/
-
-html {
-  margin: 0;
+#wrap img {
   background-size: cover;
-  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/full-lonely.jpg") no-repeat center center fixed;
-  background-blend-mode: darken;
-  // blend mode optional at this stage; will be used more in the next demo.
-  transition: 3s;
-  transition-timing-function: ease-in-out;
+  top:0;
+  width:100%;
+  height:100%;
+  position: absolute;
 }
 
 .login-head-path {
@@ -166,6 +156,7 @@ html {
 .social-media-icons-container {
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 .social-media-icons-container a img {

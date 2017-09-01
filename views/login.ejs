@@ -1,71 +1,66 @@
-	<title>RecommendMe</title>
+<title>RecommendMe</title>
 
-	<link rel="stylesheet" href="/css/loginStyles.css">
-	<link rel="stylesheet" href="/css/styles.css">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-	<script src="/js/jquery-2.1.4.min.js"></script>
+<link rel="stylesheet" href="/css/loginStyles.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<script src="/js/jquery-2.1.4.min.js"></script>
 
-	<div class="login-main-container">
+<div class="login-main-container">
 
-	  <div id="texttop"></div>
+	<div id="wrap">
+	<img src="https://s3.us-east-2.amazonaws.com/dat-tran-recommendme/Bali-island.jpg"/>
+	<img src="https://s3.us-east-2.amazonaws.com/dat-tran-recommendme/bg_login1.jpg"/>
+	<img src="https://s3.us-east-2.amazonaws.com/dat-tran-recommendme/bg_login2.jpg"/>
+	<img src="https://s3.us-east-2.amazonaws.com/dat-tran-recommendme/bg_login3.jpg"/>
+	<img src="https://s3.us-east-2.amazonaws.com/dat-tran-recommendme/moutain_bg.jpg"/>
+	<img src="https://s3.us-east-2.amazonaws.com/dat-tran-recommendme/nature-wallpaper.jpg"/>
+	</div>
 
-	  <div class="login-head-path">
-	    <div class="logo">
-	      <span></span>
-	    </div>
-	  </div>
+	<div class="login-head-path">
+		<div class="logo">
+			<span></span>
+		</div>
+	</div>
 
-	  <div class="bottom-container">
-	    <div style="font-size: 22px;" class="login-hi-sign">Hello. Sign in.</div>
-	    <div class="login-wrap-form">
-	      <div class="login-fieldset">
-	        <div class="login-box">
-	          <label for="inpEmail" class="login-screen-out">Email address</label>
-	          <input type="email" id="enpEmail" name="inpEmail" class="inp_comm" placeholder="Email address">
-	        </div>
-	        <div class="login-box">
-	          <label for="inpEmail" class="login-screen-out">Password</label>
-	          <input type="email" id="enpEmail" name="inpEmail" class="inp_comm" placeholder="Password">
-	        </div>
-	        <div class="login-wrap-sign">
-	          <button ui-sref="home" type="summit" class="login-btn-sign">Sign in</buton>
-	          </div>
-	          <div class="login-noti">
-	            <p class="login-desc-noti">Not on RecommendMe? <a class="login-link-noti" href="signup">Get started here</a></p>
-	          </div>
-	          <div class="social-media-icons-container">
-	            <a href="/auth/facebook">
-	      				<img id="loginBtnImg" src="../img/fbLoginBtn.png" alt="Sign-In with Facebook">
-	      			</a>
-	      			<a href="/auth/twitter">
-	      				<img id="loginBtnImg" src="../img/twLoginBtn.png" alt="Sign-In with Twitter">
-	      			</a>
-	          </div>
-	        </div>
-	      </div>
-	    </div>
+	<div class="bottom-container">
+		<div style="font-size: 22px;" class="login-hi-sign">Hello. Sign in.</div>
+		<div class="login-wrap-form">
+			<div class="login-fieldset">
+				<div class="login-box">
+					<label for="inpEmail" class="login-screen-out">Email address</label>
+					<input type="email" id="enpEmail" name="inpEmail" class="inp_comm" placeholder="Email address">
+				</div>
+				<div class="login-box">
+					<label for="inpEmail" class="login-screen-out">Password</label>
+					<input type="email" id="enpEmail" name="inpEmail" class="inp_comm" placeholder="Password">
+				</div>
+				<div class="login-wrap-sign">
+					<button ui-sref="home" type="summit" class="login-btn-sign">Sign in</buton>
+					</div>
+					<div class="login-noti">
+						<p class="login-desc-noti">Not on RecommendMe? <a class="login-link-noti" href="signup">Get started here</a></p>
+					</div>
+					<div class="social-media-icons-container">
+						<a href="/auth/facebook">
+							<img id="loginBtnImg" src="../img/fbLoginBtn.png" alt="Sign-In with Facebook">
+						</a>
+						<a href="/auth/twitter">
+							<img id="loginBtnImg" src="../img/twLoginBtn.png" alt="Sign-In with Twitter">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
 
-	  </div>
+	</div>
 
 <script>
-var bgImageArray = ["bg_login1.jpg", "bg_login2.jpg", "bg_login3.jpg", "Bali-island.jpg", "beach_house_bg.jpg", "nature-wallpaper.jpg"],
-base = "https://s3.us-east-2.amazonaws.com/dat-tran-recommendme/",
-secs = 4;
-bgImageArray.forEach(function(img){
-	new Image().src = base + img;
-	// caches images, avoiding white flash between background replacements
-});
+$('#wrap img').hide();
 
-function backgroundSequence() {
-window.clearTimeout();
-var k = 0;
-for (i = 0; i < bgImageArray.length; i++) {
-	setTimeout(function(){
-		document.documentElement.style.background = "url(" + base + bgImageArray[k] + ") no-repeat center center fixed";
-		document.documentElement.style.backgroundSize ="cover";
-	if ((k + 1) === bgImageArray.length) { setTimeout(function() { backgroundSequence() }, (secs * 1000))} else { k++; }
-	}, (secs * 1000) * i)
+function anim() {
+    $("#wrap img").first().appendTo('#wrap').fadeOut(4000);
+    $("#wrap img").first().fadeIn(2000);
+    setTimeout(anim, 7000);
 }
-}
-backgroundSequence();
+anim();
 </script>
