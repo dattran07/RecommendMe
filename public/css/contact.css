@@ -2,6 +2,10 @@
   font-family: 'Open sans', sans-serif;
 }
 
+body {
+  background-color: black;
+}
+
 .home {
   display: flex;
   justify-content: center;
@@ -9,7 +13,7 @@
 }
 
 .home a:hover {
-    border-bottom: 3px solid rgb(189,212,54);
+  border-bottom: 3px solid rgb(189, 212, 54);
 }
 
 .s_form {
@@ -98,6 +102,11 @@
   border-radius: 6px;
 }
 
+.contactForm {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 .mergeRow1 {
   padding: 0 0 6px 0 !important;
   clear: both;
@@ -150,7 +159,7 @@
   padding: 0;
 }
 
-.acenter  .contact-input {
+.acenter .contact-input {
   display: block;
   float: none;
   width: 480px;

@@ -3,7 +3,6 @@
 <link rel="stylesheet" href="/css/loginStyles.css">
 <link rel="stylesheet" href="/css/styles.css">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-<script src="/js/jquery-2.1.4.min.js"></script>
 
 <div class="login-main-container">
 
@@ -11,9 +10,10 @@
 	<img src="https://s3.us-east-2.amazonaws.com/dat-tran-recommendme/Bali-island.jpg"/>
 	<img src="https://s3.us-east-2.amazonaws.com/dat-tran-recommendme/bg_login1.jpg"/>
 	<img src="https://s3.us-east-2.amazonaws.com/dat-tran-recommendme/bg_login2.jpg"/>
-	<img src="https://s3.us-east-2.amazonaws.com/dat-tran-recommendme/bg_login3.jpg"/>
+	<img src="https://s3.us-east-2.amazonaws.com/dat-tran-recommendme/hot_air_ballon_bg.jpg"/>
 	<img src="https://s3.us-east-2.amazonaws.com/dat-tran-recommendme/moutain_bg.jpg"/>
 	<img src="https://s3.us-east-2.amazonaws.com/dat-tran-recommendme/nature-wallpaper.jpg"/>
+	<img src="https://s3.us-east-2.amazonaws.com/dat-tran-recommendme/sarek-national-parkjokkmokkswedenartomarttinen-14846910324kgn8-1280x855.jpg"/>
 	</div>
 
 	<div class="login-head-path">
@@ -53,14 +53,14 @@
 		</div>
 
 	</div>
-
+<script src="/js/jquery-2.1.4.min.js"></script>
 <script>
 $('#wrap img').hide();
 
 function anim() {
     $("#wrap img").first().appendTo('#wrap').fadeOut(4000);
-    $("#wrap img").first().fadeIn(2000);
-    setTimeout(anim, 7000);
+    $("#wrap img").first().fadeIn(0);
+    setTimeout(anim, 8000);
 }
 anim();
 </script>

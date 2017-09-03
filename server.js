@@ -22,30 +22,37 @@ app.get('/api/products', productsCtrl.getAll);
 app.put('/api/product/:id/:price', productsCtrl.update);
 app.delete('/api/product/:id', productsCtrl.delete);
 
-// var smtpTransport = nodemailer.createTransport({
-//   service: "gmail",
-//   auth: {
-//     user: config.email,
-//     pass: config.password
-//   }
-// });
-//
-// app.post('/api/email', function(req, res, next) {
-// 	smtpTransport.sendMail({
-//     from: `${config.email}`,
-//     to: 'dattran0724@gmail.com',
-//     subject: 'Hello',
-//     text: `From: ${req.body.contact.name} at ${req.body.contact.email}. ${req.body.contact.msg}`
-//   }, function(error, response) {
-//     if (error) {
-//       console.log(error);
-//       res.sendStatus(204);
-//     } else {
-//       res.sendStatus(200);
-//     }
-//     smtpTransport.close();
-//   });
-// })
+let transporter = nodemailer.createTransport({
+  service: "gmail",
+	secure: false,
+	port: 25,
+  auth: {
+    user: 'testnodemailer48@gmail.com',
+    pass: 'Web12345'
+  },
+	tls: {
+		rejectUnauthorized: false
+	}
+});
+
+app.post('/api/email', function(req, res) {
+console.log(req.query);
+var name = req.query.name;
+var email = req.query.email;
+var msg = req.query.msg;
+  let mailOptions = {
+    from: email,
+		to: 'testnodemailer48@gmail.com',
+		subject: 'Email from ' + name,
+		text: msg
+  };
+	transporter.sendMail(mailOptions, function(error, info) {
+    if(error) {
+      return console.log(error);
+    }
+  })
+	res.status('200').send('sup')
+});
 
 app.set('port', process.env.PORT || 3000);
 app.set('host', config.host)

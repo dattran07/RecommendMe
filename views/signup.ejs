@@ -7,9 +7,9 @@
 
 	<div id="wrap">
 	<img src="https://s3.us-east-2.amazonaws.com/dat-tran-recommendme/Bali-island.jpg"/>
-	<img src="https://s3.us-east-2.amazonaws.com/dat-tran-recommendme/bg_login1.jpg"/>
-	<img src="https://s3.us-east-2.amazonaws.com/dat-tran-recommendme/bg_login2.jpg"/>
 	<img src="https://s3.us-east-2.amazonaws.com/dat-tran-recommendme/bg_login3.jpg"/>
+	<img src="https://s3.us-east-2.amazonaws.com/dat-tran-recommendme/bg_login2.jpg"/>
+	<img src="https://s3.us-east-2.amazonaws.com/dat-tran-recommendme/bg_login1.jpg"/>
 	<img src="https://s3.us-east-2.amazonaws.com/dat-tran-recommendme/moutain_bg.jpg"/>
 	<img src="https://s3.us-east-2.amazonaws.com/dat-tran-recommendme/nature-wallpaper.jpg"/>
 	</div>
@@ -56,14 +56,14 @@
     </div>
 
   </div>
-
+	<script src="/js/jquery-2.1.4.min.js"></script>
 	<script>
 	$('#wrap img').hide();
 
 	function anim() {
 	    $("#wrap img").first().appendTo('#wrap').fadeOut(4000);
-	    $("#wrap img").first().fadeIn(2000);
-	    setTimeout(anim, 7000);
+	    $("#wrap img").first().fadeIn(0);
+	    setTimeout(anim, 8000);
 	}
 	anim();
 	</script>

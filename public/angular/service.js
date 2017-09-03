@@ -28,4 +28,10 @@ angular.module("myApp").service("service", function($http) {
             data: {"name" : name, "description" : desc, "price" : price, "imageurl" : img, "producturl" : url}
         })
     }
+    this.SendingMail = (contact) => {
+      return $http({
+        method: "POST",
+        url: '/api/email?msg=' + contact.msg + '&email=' + contact.email + '&name=' + contact.name
+      })
+    }
 })
