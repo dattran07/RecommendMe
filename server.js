@@ -28,7 +28,7 @@ let transporter = nodemailer.createTransport({
 	port: 25,
   auth: {
     user: 'testnodemailer48@gmail.com',
-    pass: #
+    pass: 'Web12345'
   },
 	tls: {
 		rejectUnauthorized: false
@@ -36,7 +36,6 @@ let transporter = nodemailer.createTransport({
 });
 
 app.post('/api/email', function(req, res) {
-console.log(req.query);
 var name = req.query.name;
 var email = req.query.email;
 var msg = req.query.msg;
@@ -51,7 +50,7 @@ var msg = req.query.msg;
       return console.log(error);
     }
   })
-	res.status('200').send('sup')
+	res.status('200').send();
 });
 
 app.set('port', process.env.PORT || 3000);

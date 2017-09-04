@@ -23,7 +23,7 @@ module.exports = {
         const dbInstance = req.app.get('db')
         const {id, price} = req.params;
         const {desc} = req.query;
-        dbInstance.update_product([desc, id, price, url]).then(()=>res.status("200").send()).catch(()=>res.status("500").send());
+        dbInstance.update_product([desc, id, price]).then(()=>res.status("200").send()).catch(()=>res.status("500").send());
      },
     delete:(req,res,next) => {
         const dbInstance = req.app.get('db')

@@ -33,7 +33,7 @@
 }
 
 .header .logo span {
-  height: 110px;
+  height: 119px;
   display: block;
   text-indent: -9999px;
   background: transparent url("../img/logo.png") center center no-repeat
@@ -91,14 +91,14 @@ a {
 .logout-button {
   display: block;
   float: right;
-  width: 150px;
+  width: 130px;
   height: 70px;
   color: #fff;
   background-color: #f34318;
   font-size: 19px;
   font-weight: bold;
   border: 1px solid #425b6c;
-  cursor: pointer;
+  cursor: pinter;
   border-radius: 25px;
   margin-right: 170px;
 }

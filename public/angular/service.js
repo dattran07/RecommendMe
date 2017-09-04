@@ -8,7 +8,7 @@ angular.module("myApp").service("service", function($http) {
             return response.data;
         })
     }
-    this.updateData = function(id,desc,price,) {
+    this.updateData = function(id,desc,price) {
         return $http({
             method: "PUT",
             url: '/api/product/' + id + "/" + price + "?desc=" + desc,
